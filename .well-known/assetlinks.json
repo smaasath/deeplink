@@ -1,0 +1,5 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "com.webshopapp",
+               "sha256_cert_fingerprints": ["3A:60:EC:F5:0C:0C:5F:8D:22:4F:66:26:59:FD:D5:63:1A:95:06:2D:56:D5:F2:7D:66:D8:C1:09:32:63:24:8E"] }
+}]
