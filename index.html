@@ -10,8 +10,26 @@
 
 <body class="no-scrollbar">
 <h1>Deep</h1>
-  <a href="webshopapp://track-order">ddd</a>
+  <button onclick="openUrlWithScheme(true)">ddd</button>
   <script>
+      openUrlWithScheme(android) {
+
+    window.location.href = "webshopapp:///" ;
+    setTimeout(() => {
+      if (document.hidden) {
+        console.log('App is installed and opened successfully.');
+      } else {
+        if (android) {
+
+          window.open("https:\/\/play.google.com\/store\/apps\/details?id=com.mitakeaway.demo6", "_self");
+        } else {
+
+          // window.open(this.iosAppStoreUrl, "_blank");
+        }
+
+      }
+    }, 1000);
+      }
   </script>
  
 </body>
