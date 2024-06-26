@@ -19,8 +19,9 @@
       // Check after a delay if the app opened successfully
       setTimeout(() => {
         // Check if the document is hidden (meaning app opened successfully)
-        if (document.hidden) {
+        if (!document.hasFocus()) {
           console.log('App is installed and opened successfully.');
+            return;
         } else {
           // App not opened, redirect to appropriate store
           if (android) {
