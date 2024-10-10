@@ -4,42 +4,33 @@
 <head>
   <meta charset="utf-8">
   <title>Aasath</title>
-
-
 </head>
 
 <body class="no-scrollbar">
   <h1>Deep v2</h1>
   <button onclick="openUrlWithScheme(true)"><h1>Android</h1></button>
-  <button onclick="openUrlWithScheme(false)"><h1>ios</h1></button>
+  <button onclick="openUrlWithScheme(false)"><h1>iOS</h1></button>
+  
   <script>
-    function openUrlWithScheme(android) {
-    const fullUrl = "webshopapp:///";
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    document.body.appendChild(iframe);
-    iframe.src = fullUrl;
-    const timeout = setTimeout(() => {
-       if (!document.hasFocus()) {
-        console.log('App is installed and opened successfully.');
-        return;
-      } else {
-          if (document.body.contains(iframe)) {
-        document.body.removeChild(iframe); 
-        if (android) {
-          window.location.href = "https:\/\/play.google.com\/store\/apps\/details?id=com.mitakeaway.demo6";
-        } else {
-          window.location.href = "https:\/\/apps.apple.com\/uk\/app\/mitakeaway\/id6443417385";
-        }
-      }
-      }
-   
-    }, 1000);
+    function openUrlWithScheme(isAndroid) {
+      const fullUrl = "webshopapp://"; // Ensure this matches your app's URL scheme
+      const iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+      iframe.src = fullUrl;
 
+      // Timeout to check if the app is opened
+      setTimeout(() => {
+        // If the app didn't open, redirect to the app store or play store
+        document.body.removeChild(iframe);
+        if (isAndroid) {
+          window.location.href = "https://play.google.com/store/apps/details?id=com.mitakeaway.demo6";
+        } else {
+          window.location.href = "https://apps.apple.com/uk/app/mitakeaway/id6443417385";
+        }
+      }, 1500); // Increased timeout duration for iOS
     }
   </script>
   
 </body>
-
-
 </html>
