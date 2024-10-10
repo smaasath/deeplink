@@ -9,7 +9,7 @@
 </head>
 
 <body class="no-scrollbar">
-  <h1>Deep v1</h1>
+  <h1>Deep v2</h1>
   <button onclick="openUrlWithScheme(true)"><h1>Android</h1></button>
   <button onclick="openUrlWithScheme(false)"><h1>ios</h1></button>
   <script>
@@ -35,11 +35,7 @@
       }
    
     }, 1000);
-    window.onfocus = () => {
-      clearTimeout(timeout);
-      document.body.removeChild(iframe);
-      console.log('App is installed and opened successfully.');
-    };
+
     }
   </script>
   
