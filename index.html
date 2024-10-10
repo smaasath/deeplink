@@ -7,28 +7,25 @@
 </head>
 
 <body class="no-scrollbar">
-  <h1>Deep v3</h1>
+  <h1>Deep v4</h1>
   <button onclick="openUrlWithScheme(true)"><h1>Android</h1></button>
   <button onclick="openUrlWithScheme(false)"><h1>iOS</h1></button>
   
   <script>
     function openUrlWithScheme(isAndroid) {
-      const fullUrl = "webshopapp://"; // Ensure this matches your app's URL scheme
-      const iframe = document.createElement('iframe');
-      iframe.style.display = 'none';
-      document.body.appendChild(iframe);
-      iframe.src = fullUrl;
-
-      // Timeout to check if the app is opened
-      setTimeout(() => {
-        // If the app didn't open, redirect to the app store or play store
-        document.body.removeChild(iframe);
-        if (isAndroid) {
-          window.location.href = "https://play.google.com/store/apps/details?id=com.mitakeaway.demo6";
+    window.location.href = "https://webshop-dev-v1-1.delivergate.com";
+    setTimeout(() => {
+      if (!document.hasFocus()) {
+        console.log('App is installed and opened successfully.');
+        return;
+      } else {
+        if (android) {
+          window.open(this.androidAppStoreUrl, "_self");
         } else {
-          window.location.href = "https://apps.apple.com/uk/app/mitakeaway/id6443417385";
+          window.open(this.iosAppStoreUrl, "_blank");
         }
-      }, 1500); // Increased timeout duration for iOS
+      }
+    }, 1000);S
     }
   </script>
   
