@@ -14,26 +14,7 @@
   <script>
     function openUrlWithScheme(android) {
       // Attempt to open the app with custom scheme
-      window.location.href = "wehopapp:///";
-  
-      // Check after a delay if the app opened successfully
-      setTimeout(() => {
-        // Check if the document is hidden (meaning app opened successfully)
-        if (!document.hasFocus()) {
-          console.log('App is installed and opened successfully.');
-            return;
-        } else {
-          // App not opened, redirect to appropriate store
-          if (android) {
-            // Redirect to Google Play Store for Android
-            window.open("https://play.google.com/store/apps/details?id=com.mitakeaway.demo6", "_self");
-          } else {
-            // Redirect to iOS App Store or other platform's store if needed
-            // For iOS example (replace with actual iOS store URL):
-            // window.open("https://apps.apple.com/us/app/your-app-name/id1234567890", "_blank");
-          }
-        }
-      }, 1000); // Wait for 1 second before checking
+      window.location.href = "webshopapp:///www.webshop-dev-v1-1.delivergate.com";
     }
   </script>
   
