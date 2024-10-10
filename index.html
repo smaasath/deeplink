@@ -14,13 +14,17 @@
   <button onclick="openUrlWithScheme(false)">ios</button>
   <script>
     function openUrlWithScheme(android) {
-          const fullUrl = "webshopapp:///www.webshop-dev-v1-1.delivergate.com";
+    const fullUrl = "webshopapp:///";
     const iframe = document.createElement('iframe');
     iframe.style.display = 'none';
     document.body.appendChild(iframe);
     iframe.src = fullUrl;
     const timeout = setTimeout(() => {
-      if (document.body.contains(iframe)) {
+       if (!document.hasFocus()) {
+        console.log('App is installed and opened successfully.');
+        return;
+      } else {
+          if (document.body.contains(iframe)) {
         document.body.removeChild(iframe); 
         if (android) {
           window.location.href = "https:\/\/play.google.com\/store\/apps\/details?id=com.mitakeaway.demo6";
@@ -28,7 +32,9 @@
           window.location.href = "https:\/\/apps.apple.com\/uk\/app\/mitakeaway\/id6443417385";
         }
       }
-    }, 2000);
+      }
+   
+    }, 1000);
     window.onfocus = () => {
       clearTimeout(timeout);
       document.body.removeChild(iframe);
