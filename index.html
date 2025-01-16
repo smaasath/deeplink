@@ -9,6 +9,7 @@
 <body class="no-scrollbar">
   <h1>Deep v4</h1>
   <button onclick="openUrl()"><h1>iOS</h1></button>
+  <button onclick="open()"><h1>open</h1></button>
   
   <script>
     function openUrl(isAndroid) {
@@ -25,6 +26,11 @@
 
       // Remove the anchor element after clicking
       document.body.removeChild(anchor);
+    }
+
+        function open(isAndroid) {
+           const url = "https://onelinavi.com";
+     window.open(url, "_blank");
     }
   </script>
   
