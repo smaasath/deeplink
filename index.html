@@ -8,24 +8,23 @@
 
 <body class="no-scrollbar">
   <h1>Deep v4</h1>
-  <button onclick="openUrlWithScheme(true)"><h1>Android</h1></button>
-  <button onclick="openUrlWithScheme(false)"><h1>iOS</h1></button>
+  <button onclick="openUrl()"><h1>iOS</h1></button>
   
   <script>
-    function openUrlWithScheme(isAndroid) {
-    window.location.href = "https://webshop-dev-v1-1.delivergate.com";
-    setTimeout(() => {
-      if (!document.hasFocus()) {
-        console.log('App is installed and opened successfully.');
-        return;
-      } else {
-        if (android) {
-          window.open(this.androidAppStoreUrl, "_self");
-        } else {
-          window.open(this.iosAppStoreUrl, "_blank");
-        }
-      }
-    }, 1000);S
+    function openUrl(isAndroid) {
+      const url = "https://onelinavi.com"; // Change this to your desired URL
+
+      // Create a temporary anchor element
+      const anchor = document.createElement('a');
+      anchor.href = url;
+      anchor.target = "_blank"; // Open in a new tab
+      document.body.appendChild(anchor); // Append the anchor to the body
+
+      // Simulate a click event on the anchor
+      anchor.click();
+
+      // Remove the anchor element after clicking
+      document.body.removeChild(anchor);
     }
   </script>
   
