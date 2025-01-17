@@ -8,11 +8,22 @@
 
 <body class="no-scrollbar">
   <h1>Deep v4</h1>
-  <button onclick="openUrl()"><h1>iOS</h1></button>
-  <button onclick="open()"><h1>open1</h1></button>
+  <button onclick="openUrl()"><h1>openForm</h1></button>
+  <button onclick="open()"><h1>open.window</h1></button>
+    <button onclick="openHref()"><h1>openHref</h1></button>
   
   <script>
     function openUrl() {
+      const url = "https://onelinavi.com";
+      const form = document.createElement("form");
+      form.method = "GET";
+      form.action = url;
+      form.target = "_blank";
+      document.body.appendChild(form);
+      form.submit();
+    }
+
+    function openHref() {
       const url = "https://onelinavi.com"; // Change this to your desired URL
 
       // Create a temporary anchor element
